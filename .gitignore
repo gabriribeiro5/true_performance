@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Documents
+CONSULTORIA-Analise_de_Produtividade_Operacional_2015.pdf
