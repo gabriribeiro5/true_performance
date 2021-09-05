@@ -1,6 +1,6 @@
 # HELLO USER
 # WELCOME TO: TRUE_PERFORMANCE
-An accurate performance calculator for operational services
+**An accurate performance calculator for operational services**
 
 SUMMARY:
 - Intro
