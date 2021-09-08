@@ -173,13 +173,37 @@ Warning:
 -> DO NOT use .venv_global for development purpose
 -> REMEMBER to update .venv_global by runing your 'push version' and installing the missing packages
 
+#### >> Commiting it right
 
-> cz commit
+All commits must comply with [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/). See how:
+
+>USE COMMITZEN
+
+DON'T use ```git commit```!
+
+Instead, use **commitizen** to help you create usefull messages and **prevent git commit hook to run and reject your commit**.
+
+With your **local environment setup and activated**, run the following command:
+```
+cz commit
+```
+
+Select the type of change you are committing (Use arrow keys), Then answer the given questions regarding your change (press enter after each answer).
+
+[note]: You can check your commits by running ```git log``` on your terminal.
 
 
-#### >> How to commit
+>WHY COMMITZEN
 
-See [conventional_commits] (https://www.conventionalcommits.org/en/v1.0.0/) for more information.
+Our commits contain the following structural elements, to communicate intent to the consumers of this library:
+
+- fix: a commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
+- feat: a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
+- BREAKING CHANGE: a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). A BREAKING CHANGE can be part of commits of any type.
+- types other than 'fix:' and 'feat:' are allowed, for example 'build:', 'chore:', 'ci:', 'docs:', 'style:', 'refactor:', 'perf:', 'test:', and others.
+
+
+See [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) for more information.
 
 ## Dev's overview:
 
