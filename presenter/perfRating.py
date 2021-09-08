@@ -1,0 +1,1 @@
+''' Presents a performance rate according to the operator pointed in the source'''
