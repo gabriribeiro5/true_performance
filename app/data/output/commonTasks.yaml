@@ -2,8 +2,8 @@
 # Dictionary of common tasks organized as follows
 #
 # CATEGORY_NAME: Helps understanding the difficulty level of a set of transactions
-#   TRANSACTION: Billable activity
-#     TASK: Operational actions required for a trasaction completition
+#   TASK: Billable activity
+#     SUBTASK: Operational actions required for a task completition
 #       PARAMETER: numbers or strings representing some bias
 
 INTERNATIONAL:
@@ -11,7 +11,7 @@ INTERNATIONAL:
     COTAÇÃO:
       SPENT_TIME:
       WEIGHT: 1
-      SETBACKS_COUNTER: 0 
+      SETBACKS_COUNTER: 0
     COTAÇÃO + RESERVA:
       SPENT_TIME:
       WEIGHT: 1
