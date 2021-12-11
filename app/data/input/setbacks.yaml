@@ -1,12 +1,12 @@
 ---
-# Dictionary possible setbacks, organized by transactions
+# Dictionary possible setbacks, organized by tasks
 # SPENT_TIME is always recorded as seconds
 #  is always 1 for Common Tasks
 
 STBK1: #SETBACK_ID
   DESCRIPTION: Login has expired
   SOURCE_NAME: it #Category (where the solution might be implemented): workflow, it, requester/client
-  RELATED_TRANSACTION_CATEGORY:
+  RELATED_TASK_CATEGORY:
     Air
     Hotel
     Car
@@ -24,7 +24,7 @@ STBK1: #SETBACK_ID
 STBK2: #SETBACK_ID
   DESCRIPTION: Login has expired
   SOURCE_NAME: it #Category (where the solution might be implemented): workflow, it, requester/client
-  RELATED_TRANSACTION_CATEGORY:
+  RELATED_TASK_CATEGORY:
     Air
     Hotel
     Car
