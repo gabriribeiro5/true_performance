@@ -8,9 +8,9 @@ CODE SOURCE:
 import yaml
 
 #Set external variables
-inputFilesPath = r'c:/Users/User/true_performance/app/data/input/' # r'path' turns path-like object into raw string
-outputFilesPath = r'c:/Users/User/true_performance/app/data/output/'
-configFilesPath  = r'c:/Users/User/true_performance/app/configfiles/'
+inputFilesPath = r'/home/kraken/codes/true_performance/app/data/input/' # r'path' turns path-like object into raw string
+outputFilesPath = r'/home/kraken/codes/true_performance/app/data/output/'
+configFilesPath  = r'/home/kraken/codes/true_performance/app/configfiles/'
 setbacksFile = 'setbacks.yaml'
 commonTasksFile = 'commonTasks.yaml'
 configFileName = 'conf.yaml'
@@ -35,7 +35,7 @@ def updateFile(newData, filePathName):
         yaml.dump(newData, anyFile)
 
 def weightTransactions(srcFilePathName, targetFilePathName):
-    'distributes wheight to each transaction in configfiles.commonTasks acording to configfiles.setbacks'
+    'distributes wheight to each transaction in data.output.commonTasks acording to data.input.setbacks'
     print("")
     print("================ Applying wheight to commonTasks ================")
     print("")
@@ -43,7 +43,7 @@ def weightTransactions(srcFilePathName, targetFilePathName):
     print(f"Opening source file")
     setbacksData = loadDataFrom(srcFilePathName)
     print(f">> first setback is: {setbacksData['STBK1']['DESCRIPTION']}")
-    
+
     print("-----------------------------------------------------------------")
 
     print(f"Opening target file")
@@ -55,7 +55,7 @@ def weightTransactions(srcFilePathName, targetFilePathName):
     updateFile(tasksData, targetFilePathName)
 
     print("==================================================================")
-            
+
 
 weightTransactions(setbacksPathName, commonTasksPathName)
 
