@@ -1,4 +1,6 @@
 import yaml
+import os
+import glob
 
 def loadDataFrom(filePathName):
         """
@@ -11,6 +13,7 @@ def loadDataFrom(filePathName):
             anyFile.close()
             return fileData
 
+
 def updateFile(newData, filePathName):
     """
     newData: data structure to be loaded at filePathName
@@ -19,3 +22,16 @@ def updateFile(newData, filePathName):
     with open(file=filePathName, mode='w', encoding='utf-8') as anyFile:
         print(f"Dumping data into target file")
         yaml.dump(newData, anyFile)
+
+
+def loadConfigFile():
+    configFile = {}
+
+    glob_path = os.environ['TRUE_PERF_APP_DIR']
+    for config_file in glob.glob(os.path.join(glob_path, 'config.yaml')):
+        with open(config_file, 'r') as f:
+            configFile.update(yaml.safe_load(f))
+    return configFile
+
+configFile = loadConfigFile()
+print(configFile['inputFilesPath'])

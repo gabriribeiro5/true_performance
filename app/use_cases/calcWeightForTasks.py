@@ -6,6 +6,7 @@ Apply additionalWeight to data.output.commonTasks.yaml
 '''
 
 from utils import fileManager
+
 import yaml
 
 #Set external variables
@@ -34,28 +35,11 @@ class weight_tasks_class(object, taskCategory, taskName, srcFilePathName, target
         self.configFilePathName = f'{configFilesPath}{configFileName}'
         print("Looking for setbacks at: "+self.setbacksPathName)
 
-    def loadDataFrom(filePathName):
-        """
-        filePathName: full path and name of the file to be loaded
-
-        """
-        with open(file=filePathName, mode='r', encoding='utf-8') as anyFile:
-            print(f"Loading data from {filePathName}")
-            fileData = yaml.safe_load(anyFile)
-            print("Closing refered file")
-            anyFile.close()
-            return fileData
-
-    def updateFile(newData, filePathName):
-        with open(file=filePathName, mode='w', encoding='utf-8') as anyFile:
-            print(f"Dumping data into target file")
-            yaml.dump(newData, anyFile)
-
     print(f"Opening source file")
-    setbacksData = loadDataFrom(srcFilePathName)
+    setbacksData = fileManager.loadDataFrom(srcFilePathName)
 
     print(f"Opening target file")
-    tasksData = loadDataFrom(targetFilePathName)
+    tasksData = fileManager.loadDataFrom(targetFilePathName)
 
     def addUpWeight(setbacksData, tasksData):
         """
