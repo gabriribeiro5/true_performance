@@ -1,0 +1,13 @@
+FROM debian:latest
+
+CMD [ "wget install pip" ]
+
+ENV TRUE_PERF_APP_DIR=/opt/app/
+ENV TRUE_PERF_LOG_DIR=/opt/logs/
+
+WORKDIR /opt/true_performance
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
