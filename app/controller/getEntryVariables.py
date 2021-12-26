@@ -5,4 +5,5 @@
     - tasksCount
     - subtasksCount
     - subWeight
+    - absolute paths
 '''
