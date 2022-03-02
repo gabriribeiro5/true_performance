@@ -2,6 +2,7 @@ import yaml
 import os
 import glob
 
+# Recebe endereço e nome de qualquer arquivo Yaml e retorna os dados do  mesmo
 def loadDataFrom(filePathName):
         """
         filePathName: full path and name of the file to be loaded
@@ -13,7 +14,7 @@ def loadDataFrom(filePathName):
             anyFile.close()
             return fileData
 
-
+# Recebe conteúdo de input + endereço e nome de qualquer arquivo Yaml. Carrega dados de input no arquivo especificado.
 def updateFile(newData, filePathName):
     """
     newData: data structure to be loaded at filePathName
@@ -26,12 +27,10 @@ def updateFile(newData, filePathName):
 
 def loadConfigFile():
     configFile = {}
-
+    
     glob_path = os.environ['TRUE_PERF_APP_DIR']
-    for config_file in glob.glob(os.path.join(glob_path, 'config.yaml')):
+    for config_file in glob.glob(os.path.join(glob_path, '*.yaml')):
         with open(config_file, 'r') as f:
             configFile.update(yaml.safe_load(f))
     return configFile
-
-configFile = loadConfigFile()
-print(configFile['inputFilesPath'])
+    

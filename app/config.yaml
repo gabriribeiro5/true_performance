@@ -1,9 +1,8 @@
 ---
-# Configurable variables
   
-inputFilesPath: r'/home/kraken/codes/true_performance/app/data/input/' # r'path' turns path-like object into raw string
-outputFilesPath: r'/home/kraken/codes/true_performance/app/data/output/'
+inputFilesPath: r'data/input/' # r'path' turns path-like object into raw string
+outputFilesPath: r'data/output/'
 setbacksFile: 'setbacks.yaml'
 commonTasksFile: 'commonTasks.yaml'
 configFileName: 'config.yaml'
-logFile: 'logs.log'
+logFile: 'true_perf.log'
